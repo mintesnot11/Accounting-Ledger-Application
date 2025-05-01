@@ -1,11 +1,33 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Comparator;
+
 public class Transaction {
-    private String date;
-    private String time;
+    // Fields
+    private LocalDate date;
+    private LocalTime time;
     private String description;
     private String vendor;
     private double amount;
 
-    public Transaction(String date, String time, String description, String vendor, double amount) {
+    // Default constructor
+    public Transaction() {
+        this.date = LocalDate.now();
+        this.time = LocalTime.now();
+        this.description = "";
+        this.vendor = "";
+        this.amount = 0.0;
+    }
+
+    // Constructor with arguments
+    public Transaction(
+            LocalDate date,
+            LocalTime time,
+            String description,
+            String vendor,
+            double amount
+    ){
         this.date = date;
         this.time = time;
         this.description = description;
@@ -13,33 +35,33 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public String getDate() {
-        return date;
-    }
+    // Methods
+    public LocalDate getDate(){return this.date;}
+    public LocalTime getTime(){return this.time;}
+    public LocalDateTime getDateTime(){return LocalDateTime.of(this.date,this.time);}
+    public String getDescription(){return this.description;}
+    public String getVendor(){return this.vendor;}
+    public double getAmount(){return this.amount;}
 
-    public String getTime() {
-        return time;
-    }
+    //What is this doing//
+    Comparator<Transaction> newestFirstComparator = (t1, t2) -> {
+        // First compare dates (newest first)
+        int dateCompare = t2.getDate().compareTo(t1.getDate());
+        if (dateCompare != 0) {
+            return dateCompare;
+        }
+        // If dates are equal, compare times (newest first)
+        return t2.getTime().compareTo(t1.getTime());
+    };
 
-    public String getDescription() {
-        return description;
-    }
-
-    public String getVendor() {
-        return vendor;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    // Converts the transaction to a line for the CSV file
-    public String toCSV() {
-        return date + "|" + time + "|" + description + "|" + vendor + "|" + amount;
-    }
-
-    @Override
-    public String toString() {
-        return date + " " + time + " | " + description + " | " + vendor + " | $" + amount;
+    public String toString(){
+        return String.format(
+                "\n%s|%s|%s|%s|%.2f",
+                this.date,
+                this.time,
+                this.description,
+                this.vendor,
+                this.amount
+        );
     }
 }
