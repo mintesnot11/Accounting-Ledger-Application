@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-//Home Screen
+
 //o The home screen should give the user the following options. The
 //application should continue to run until the user chooses to exit.
 //§ D) Add Deposit - prompt user for the deposit information and
