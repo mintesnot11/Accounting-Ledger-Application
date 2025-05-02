@@ -1,7 +1,7 @@
 # Accounting-Ledger-Application
 This is the main menu. You can choose to add a deposit, make a payment, view the ledger, or exit the app.
 The Deposit lets you record money coming in. After you choose it, the app asks for the vendor name, description, and amount.
-Once you enter those, it saves the deposit to your ledger.
+Once you enter those, it saves the deposit to your transactions.
 ![screenshot1](screenShots/screenshot1.png)
 After you enter the vendor, description, and amount, the app automatically adds the current date and time.
 It saves everything in this format: date | time | description | vendor | amount.
