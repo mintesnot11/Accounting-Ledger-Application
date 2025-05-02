@@ -66,4 +66,15 @@ This closes the app.
 
 ![screenshot1](screenShots/Screenshot10PM.png)
 
+Interesting Code
+
+This method loads all transactions from the CSV file. 
+It skips the header row, ignores empty lines, and splits each line into parts (date, time, description, vendor, amount). 
+Then it creates a Transaction object for each line and sorts all the transactions so the newest ones come first. 
+Finally, it returns the full list of transactions.
+
+![screenshot1](screenShots/Interesting.png)
+
+
+
 
