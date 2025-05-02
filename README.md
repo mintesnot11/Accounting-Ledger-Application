@@ -1,7 +1,7 @@
 # Accounting-Ledger-Application
 ![screenshot1](screenShots/screenshot1.png)
 ![screenshot1](screenShots/screenshot2.png)
-![screenshot1](screenShots/screenshot3.png)
+![screenshot1](screenShots/screenshot3PM.png)
 ![screenshot1](screenShots/screenshot4.png)
 ![screenshot1](screenShots/screenshot5.png)
 ![screenshot1](screenShots/screenshot6.png)
