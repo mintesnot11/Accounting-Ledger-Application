@@ -31,6 +31,8 @@ public class LedgerMethods {
                             t.getAmount()));
         }
     }
+    // 2025-04-30|22:13:14|test|test|34
+    // [2025-04-30, 22:13:14, test, test, 34]
 
     public static List<Transaction> loadTransactions() throws IOException {
         return Files.lines(Paths.get(CSV_FILE))
@@ -84,38 +86,6 @@ public class LedgerMethods {
                 .collect(Collectors.toList());
         displayTransactions(payments);
     }
-
-//    public void displayReportsMenu() {
-//        Scanner scanner = new Scanner(System.in);
-//        while (true) {
-//            System.out.println("\n=== Reports Menu ===");
-//            System.out.println("1) Month To Date");
-//            System.out.println("2) Previous Month");
-//            System.out.println("3) Year To Date");
-//            System.out.println("4) Previous Year");
-//            System.out.println("5) Search by Vendor");
-//            System.out.println("0) Back to Ledger Menu");
-//            System.out.print("Choose an option: ");
-//
-//            String choice = scanner.nextLine().trim();
-//
-//            try {
-//                List<Transaction> transactions = loadTransactions();
-//
-//                switch (choice) {
-//                    case "1" -> displayMonthToDate(transactions);
-//                    case "2" -> displayPreviousMonth(transactions);
-//                    case "3" -> displayYearToDate(transactions);
-//                    case "4" -> displayPreviousYear(transactions);
-//                    case "5" -> searchByVendor(transactions);
-//                    case "0" -> { return; }
-//                    default -> System.out.println("Invalid choice. Please try again.");
-//                }
-//            } catch (IOException e) {
-//                System.out.println("Error loading transactions: " + e.getMessage());
-//            }
-//        }
-//    }
 
     public void displayMonthToDate(List<Transaction> transactions) {
         LocalDate now = LocalDate.now();

@@ -31,15 +31,12 @@ public class HomeScreen {
             } else if (chose.equals("P")) {
                 transactionMethods.makePayment();
             } else if (chose.equals("L")) {
-                System.out.println("you are printing l");
                LedgerHomeScreen ledgerHomeScreen = new LedgerHomeScreen();
                ledgerHomeScreen.ledgerOption();
-
             } else if(chose.equals("X")){
                System.out.println("Exiting from the application");
             } else {
                 System.out.println("Invalid input");
-
             }
 
 
