@@ -43,9 +43,13 @@ public class Transaction {
     public String getVendor(){return this.vendor;}
     public double getAmount(){return this.amount;}
 
+    // t1 = 01-04-2025 9:00 AM desc vendor amount
+    // t2 = 02-03-2025 8:00 AM desc vendor amount
+
     //What is this doing//
     Comparator<Transaction> newestFirstComparator = (t1, t2) -> {
         // First compare dates (newest first)
+        // if t1 and t2 are the same dateCompare = 0
         int dateCompare = t2.getDate().compareTo(t1.getDate());
         if (dateCompare != 0) {
             return dateCompare;
