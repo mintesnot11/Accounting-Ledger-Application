@@ -1,5 +1,4 @@
 # Accounting-Ledger-Application
-Add Deposit and Home screen
 This is the main menu. You can choose to add a deposit, make a payment, view the ledger, or exit the app.
 The Deposit lets you record money coming in. After you choose it, the app asks for the vendor name, description, and amount.
 Once you enter those, it saves the deposit to your ledger.
